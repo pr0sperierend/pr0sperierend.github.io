@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>PR0GRAMMfeud</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="PR0GRAMMfeud - Das Familienduell des pr0gramm">
+        <meta name="author" content="pr0sperierend">
+        <link rel="shortcut icon" href="./favicon.ico">
+        <link href="./css/bootstrap.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">       
+            <nav class="navbar navbar-default navbar-fixed">
+                <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-console" aria-hidden="true"></span> PR0GRAMMfeud</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a><span style="background-color: #5cb85c;" class="label label-info">SFW</span></a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">zum Post</a></li>
+                            <li><a target="_blank" href="http://pr0gramm.com/user/">von mir</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+         
+            <div class="row">
+                
+                <div class="col-md-12">
+                    <!-- <div class="alert alert-dismissible alert-default">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Hundert pr0grammer haben wir gefragt!</strong> Taggen Sie dieses Bild. 
+                    </div -->
+                </div> 
+                
+                <div class="col-md-4">
+                    <div class="well">
+                        Familien
+                        <div class="btn-group btn-group-justified">
+                            <a id="team1" onclick="setCurrentTeam(1);" class="btn btn-info">Kevin<br>Benis: 0</a>
+                            <a id="team2" onclick="setCurrentTeam(2);" class="btn btn-warning">Falk<br>Benis: 0<br></a>
+                        </div>
+                    </div>
+                    <div class="well">
+                        Tags
+                        <!-- <div class="progress">
+                            <div id="team1progress" class="progress-bar progress-bar-info" style="width: 35%"></div>
+                            <div id="team2progress" class="progress-bar progress-bar-warning" style="width: 10%"></div>
+                        </div> -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <!-- <span class="input-group-addon">Tag</span> -->
+                                <form action="#" onsubmit="submitTag();">
+                                    <input id="tagfeld" class="form-control" type="text" placeholder="würde" autofocus>
+                                    <span class="input-group-btn">
+                                        <button id="tagbutton" class="btn btn-default" type="submit">taggen</button>
+                                    </span>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="tagcount"></div>
+                        <div id="taglist">
+                        </div>
+                        
+                    </div>
+                    
+                    <!--
+                    <div class="well">
+                        <a onclick="newPic();" class="btn btn-default">newPic</a>
+                        <a onclick="showTags();" class="btn btn-default">showTags</a>
+                    </div>   
+                    -->
+                    
+                    <div class="well" id="gespielt">
+                      Gespielte Bilder<br>  
+                    </div>
+                    
+                </div>
+                
+                <div class="col-md-8"><div class="well">
+                    <img id="pImage" style="width: 100%; height: auto;" src="./giphy.gif"/>
+                    <video id="pVideo" style="width: 100%; height: auto;" type="video/webm" autoplay="" loop="" src=""/>
+                </div></div>
+            
+            
+            </div>
+        </div> 
+        
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-console" aria-hidden="true"></span> PR0GRAMMfeud</h4>
+              </div>
+              <div class="modal-body">
+                  "Hundert Leute haben wir gefragt..." - <a target="_blank" href="http://pr0gramm.com/new/Werner%20Schulze-Erdel">Werner Schulze-Erdel</a> vom 
+                  <a href="http://www.dailymotion.com/video/x2faxxj" target="_blank">Familienduell</a> <i>(hat er so gesagt)</i><br> 
+                  Das Familienduell jetzt auch mit pr0-Content!
+                  <br>
+                  <br>Es spielen gegeneinander die Familien <a href="http://pr0gramm.com/new/kevin%20und%20falk" target="_blank">Kevin und Falk</a>. 
+                  <br>Schau dir den Post an und errate die Tags. 
+                  <br><span class="label label-success">Richtige Tags</span> geben Benis, <span class="label label-danger">Falsche Tags</span> zählen als falsche Fehler.
+                  <br>Hat ein Hurensohn 5 Fehler oder wurden alle Tags getaggt, wird ein neues Bild gespielt.
+                  <br>
+                  <br>Momentan gibt es nur einen Singleplayermodus. Bei ausreichend Nachfrage leg ich einen <a href="http://pr0gramm.com/new/multiplayer/553658" target="_blank">Multiplayermodus</a> nach. 
+                  Aber wer hat schon Freunde?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="alert('Errate die Tags zu den Posts, sammle Benis.')">tl;dr</button>
+                <a class="btn btn-danger" target="_blank" href="http://pr0gramm.com/new/366373">lohnt nicht</a>
+                <button type="button" class="btn btn-success" data-dismiss="modal">lohnt</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <!-- Modal -->
+        <div class="modal fade" id="modalOverview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modalOverviewLabel"><span class="glyphicon glyphicon-console" aria-hidden="true"></span> PR0GRAMMfeud</h4>
+              </div>
+              <div class="modal-body" id="modalOverviewBody">
+                
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="newPic()">Nächster Post</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="./js/p5.min.js"></script>
+        <script src="./js/bootstrap.js"></script>
+        <script src="./js/gamelogic.js"></script>
+        
+    </body>
+</html>
